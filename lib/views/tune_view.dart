@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_notes_player_app_setup/models/tune_model.dart';
+import 'package:music_notes_player_app_setup/widgets/continer.dart';
 
 import 'package:music_notes_player_app_setup/widgets/tune_items.dart';
 
@@ -25,9 +26,8 @@ class TuneView extends StatelessWidget {
         backgroundColor: const Color(0xff26313A),
         centerTitle: true,
       ),
-      body: Column(
-        children: tuneItems(items),
-      ),
+      body: Column(children: items.map((e) => TuneItem(tuneModle: e)).toList()),
     );
   }
 }
+// tuneItems(items),
